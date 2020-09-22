@@ -5,7 +5,7 @@ const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/andreasng97/ckf725qta00qa19nv9ueayy32',
         center: [10.730034556850455, 59.92318372188379],
-        zoom: 11.5,
+        zoom: 11.9,
     })
 
 map.addControl(new mapboxgl.NavigationControl());
@@ -83,7 +83,9 @@ const drawMarkers = async (data, toggle) => {
         const marker = new mapboxgl.Marker(el)
             .setLngLat([station.lon, station.lat])
             .setPopup(new mapboxgl.Popup()
-                .setHTML(htmlPopup(station)))
+                .setHTML(htmlPopup(station))
+                .setMaxWidth('325px'))
+                
             .addTo(map)
 
         currentMarkers.push(marker)
@@ -96,7 +98,7 @@ const drawMarkers = async (data, toggle) => {
 function htmlPopup(station){
     return `<ul>
                 <li class='addressAndName border-bottom'><h3>${station.name}</h3></li>
-                <li class='addressAndName mb-2' >${station.address}</li>
+                <li class='addressAndName mt-2 mb-3' >${station.address}</li>
                 <li>
                     <img class='popup-icon' src="./img/bike.png"/>
                     <p class='number'>
@@ -104,7 +106,7 @@ function htmlPopup(station){
                         ${station.bikes_available === 1 ? 'bike' : 'bikes'} available
                     </p>
                 </li>
-                <li>
+                <li class='mt-2'>
                     <img class='popup-icon' src="./img/parking.png"/>
                     <p class='number'>
                         ${station.docks_available}
