@@ -1,0 +1,23 @@
+{
+  "name": "oslo-citybikes",
+  "version": "1.0.0",
+  "description": "A small and simple web application displaying all of the bikestations in Oslo, and shows available docks and bikes in each station.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreasNg97/Ardoq.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage":"https://AndreasNg97.github.io/oslo-citybikes",
+  "bugs": {
+    "url": "https://github.com/AndreasNg97/Ardoq/issues"
+  },
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
